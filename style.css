@@ -22,32 +22,12 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    /* background-color: rgba(194, 191, 191, 0.699); */
+    background-color: rgb(243, 243, 243);
 }
-@media only screen and (max-width:1024px){
-    #calculator {
-        border: 2px solid;
-        border-radius: 15px;
-        height: 65vh;
-        width: 40vw;
-        padding: 10px;
-    }   
-}
-@media only screen and (max-width:450px){
-    #calculator {
-        border: 2px solid;
-        border-radius: 15px;
-        height: 58vh;
-        width: 60vw;
-        padding: 10px;
-    }   
-}
-
 
 /*  SECTION 1 NAV */
 
 #calculator .nav{
-    /* background-color: aquamarine; */
     height: 6%;
     width: 100%;
     display: flex;
@@ -60,7 +40,8 @@ body {
 #calculator  .mainHeading{
     font-size: 18px;
     font-weight: 500;
-    border: 1px solid;
+    /* border: 1px solid; */
+    border: 1.5px solid;
     padding: 1px 8px;
     border-radius: 15px;
     background-color: black;
@@ -158,5 +139,48 @@ height: 20px;
 
 .Digits section .forChange:hover{
     transform: scale(110%);
+}
+
+/*   for change theme */
+
+.calculatorDark {
+    background-color: rgba(194, 191, 191, 0.699) !important;
+}
+
+.mainHeadingDark{
+    border: 1.5px solid !important;
+    background-color: white !important;
+    color: black !important;
+}
+
+.caculationsDark{
+    background-color: white !important;
+}
+
+.specialDigitsDark{
+    background-color: white !important;
+}
+
+
+
+/*   media queries */
+
+@media only screen and (max-width:1024px){
+    #calculator {
+        border: 2px solid;
+        border-radius: 15px;
+        height: 65vh;
+        width: 40vw;
+        padding: 10px;
+    }   
+}
+@media only screen and (max-width:450px){
+    #calculator {
+        border: 2px solid;
+        border-radius: 15px;
+        height: 58vh;
+        width: 60vw;
+        padding: 10px;
+    }   
 }
 
