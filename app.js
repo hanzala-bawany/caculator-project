@@ -50,25 +50,52 @@ let allDigits = [...document.body.querySelector(".Digits").querySelectorAll("spa
 
 allDigits.forEach(function (items) {
     items.addEventListener("click", function () {
-        
-        if(items.innerHTML == "AC"){
+        // try {
+
+        calculationAreaResult.classList.remove("onClickEqualsTo");
+
+        if (items.innerHTML == "AC") {
             userInput = "";
             calculationArea.innerHTML = "00";
-            calculationAreaResult.innerHTML =  "00";
+            calculationAreaResult.innerHTML = "00";
 
         }
-        else if(items.innerHTML == "="){
-            userInput =  eval(userInput);
+        else if (items.innerHTML == "=") {
+
+            userInput = eval(userInput);
             calculationAreaResult.innerHTML = userInput;
+            calculationAreaResult.classList.add("onClickEqualsTo");
         }
-        else{
+        else if (items.querySelector("img")?.id == `backSpaceImg`) {
+            
+            // console.log(userInput,"first");
+            
+            userInput = userInput.slice(0, -1);
+            
+            // console.log(userInput,"second");
+            
+            calculationArea.innerHTML = userInput || "00";
 
-        userInput = userInput + items.innerHTML;
-        calculationArea.innerHTML = userInput;
-        // userInput =  eval(userInput);
-        // calculationAreaResult.innerHTML = userInput;
+            // console.log(userInput,"thirds");
+        }
+        else {
+
+            if (items.innerHTML == "X") {
+                userInput = userInput + "*";
+                calculationArea.innerHTML = userInput;
+            }
+            else {
+                userInput = userInput + items.innerHTML;
+                calculationArea.innerHTML = userInput;
+            }
+
 
         }
+        // }
+        // catch {
+        //     alert("you make a mistake")
+
+        // }
 
     })
 });

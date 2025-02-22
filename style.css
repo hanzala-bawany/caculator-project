@@ -161,6 +161,12 @@ height: 20px;
     background-color: white !important;
 }
 
+.onClickEqualsTo{
+    font-size: 25px !important;
+    color: black;
+    font-weight: 500;
+}
+
 
 
 /*   media queries */
