@@ -50,7 +50,7 @@ let allDigits = [...document.body.querySelector(".Digits").querySelectorAll("spa
 
 allDigits.forEach(function (items) {
     items.addEventListener("click", function () {
-        // try {
+        try {
 
         calculationAreaResult.classList.remove("onClickEqualsTo");
 
@@ -67,16 +67,18 @@ allDigits.forEach(function (items) {
             calculationAreaResult.classList.add("onClickEqualsTo");
         }
         else if (items.querySelector("img")?.id == `backSpaceImg`) {
-            
-            // console.log(userInput,"first");
-            
-            userInput = userInput.slice(0, -1);
-            
-            // console.log(userInput,"second");
-            
-            calculationArea.innerHTML = userInput || "00";
 
-            // console.log(userInput,"thirds");
+            if (!isNaN(userInput)) {
+           
+                if(userInput) userInput = calculationArea.innerHTML.slice(0,-1);
+                calculationArea.innerHTML = userInput || "00";
+           
+            }
+            else {
+                userInput = userInput.slice(0, -1);
+                calculationArea.innerHTML = userInput || "00";
+            }
+
         }
         else {
 
@@ -91,11 +93,11 @@ allDigits.forEach(function (items) {
 
 
         }
-        // }
-        // catch {
-        //     alert("you make a mistake")
+        }
+        catch {
+            alert("you make a mistake")
 
-        // }
+        }
 
     })
 });
@@ -104,13 +106,6 @@ allDigits.forEach(function (items) {
 
 
 
-
-
-
-// let calculatingDigits =  calculationArr.map(function(items){
-//   return Number(items)
-// })
-// calculatingDigits.join("")
 
 
 
